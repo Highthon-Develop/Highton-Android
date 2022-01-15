@@ -17,7 +17,12 @@
         <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/fragment_auth_student_information.xml" value="0.25" />
         <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/fragment_diary.xml" value="0.22" />
         <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/fragment_feed.xml" value="0.1" />
-        <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/fragment_write_dialog.xml" value="0.13446824789594491" />
+        <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/fragment_profile.xml" value="0.13446824789594491" />
+        <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/fragment_wirte_diary.xml" value="0.1" />
+        <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/fragment_write_dialog.xml" value="0.25" />
+        <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/item_diary_item.xml" value="0.25" />
+        <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/item_follow_recommendation_list.xml" value="0.25" />
+        <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/item_todays_popular_feed_list.xml" value="0.2" />
         <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/search_school_item.xml" value="0.1" />
       </map>
     </option>
