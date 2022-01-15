@@ -15,7 +15,7 @@ class SearchSchoolFinishFragment :
     private val viewModel: AuthViewModel by activityViewModels()
     override fun FragmentAuthSchoolSearchFinishBinding.onCreateView() {
 
-        binding.schoolNameText.text = "우리학교는\n${viewModel.schoolName.value.toString()}"
+        binding.schoolNameText.text = viewModel.schoolName.value.toString()
     }
 
     override fun FragmentAuthSchoolSearchFinishBinding.onViewCreated() {
