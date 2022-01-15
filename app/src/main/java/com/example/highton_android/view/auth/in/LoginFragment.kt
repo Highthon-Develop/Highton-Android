@@ -4,6 +4,7 @@ import android.text.TextUtils
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.highton_android.R
 import com.example.highton_android.base.BaseFragment
 import com.example.highton_android.data.model.auth.request.LoginRequest
@@ -39,12 +40,15 @@ class LoginFragment : BaseFragment<FragmentAuthLoginBinding>(R.layout.fragment_a
                     }
                 }
             }
+            binding.signupBtn.setOnClickListener {
+                findNavController().navigate(R.id.action_loginFragment_to_schoolRegistrationFragment)
+            }
             isSuccess.observe(viewLifecycleOwner) {
-               if(it){
-                   //TODO
-               }else{
-                   Toast.makeText(requireContext(), "로그인에 실패했습니다.", Toast.LENGTH_SHORT).show()
-               }
+                if (it) {
+                    //TODO
+                } else {
+                    Toast.makeText(requireContext(), "로그인에 실패했습니다.", Toast.LENGTH_SHORT).show()
+                }
             }
             isFailure.observe(viewLifecycleOwner) {
                 Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()

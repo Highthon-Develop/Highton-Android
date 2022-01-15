@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.text.TextUtils
 import android.util.Log
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.highton_android.R
@@ -19,9 +20,10 @@ class AuthStudentInFormationFragment :
     BaseFragment<FragmentAuthStudentInformationBinding>(R.layout.fragment_auth_student_information) {
     private var sexText = "남성"
     private var setGrade = 1
-    private val viewModel: AuthViewModel by viewModels()
+    private val viewModel: AuthViewModel by activityViewModels()
     override fun FragmentAuthStudentInformationBinding.onCreateView() {
-
+        binding.schoolNameText.text = viewModel.schoolName.value.toString()
+        Log.d("TAG", "onCreateView: ${viewModel.scCode.value} ")
 
     }
 
@@ -36,26 +38,26 @@ class AuthStudentInFormationFragment :
     private fun postAccount() {
         binding.accountCreateBtn.setOnClickListener {
 
-                lifecycleScope.launch {
-                    viewModel.postAccount(
-                        AccountRequest(
-                            binding.emailEditText.text.toString(),
-                            binding.passwordEditText.text.toString(),
-                            binding.nameText.text.toString(),
-                            binding.birthYearEditText.text.toString().toInt(),
-                            binding.birthMonthEditText.text.toString().toInt(),
-                            binding.birthDayEditText.text.toString().toInt(),
-                            "GDG",
-                            "AGD",
-                            setGrade,
-                            sexText,
-                            binding.nicknameEditText.text.toString()
-                        )
+            lifecycleScope.launch {
+                viewModel.postAccount(
+                    AccountRequest(
+                        binding.emailEditText.text.toString(),
+                        binding.passwordEditText.text.toString(),
+                        binding.nameText.text.toString(),
+                        binding.birthYearEditText.text.toString().toInt(),
+                        binding.birthMonthEditText.text.toString().toInt(),
+                        binding.birthDayEditText.text.toString().toInt(),
+                        viewModel.scCode.value.toString(),
+                        viewModel.schulCode.value.toString(),
+                        setGrade,
+                        sexText,
+                        binding.nicknameEditText.text.toString()
                     )
+                )
 
-                }
             }
         }
+    }
 
 
     private fun setSex() {
