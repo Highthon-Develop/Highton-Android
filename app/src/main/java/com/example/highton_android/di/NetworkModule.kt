@@ -17,7 +17,7 @@ import javax.inject.Singleton
 object NetworkModule {
 
 
-    private const val BASE_URL = ""
+    private const val BASE_URL = "http://ec2-3-38-40-44.ap-northeast-2.compute.amazonaws.com:3000"
 
     @Provides
     @Singleton
