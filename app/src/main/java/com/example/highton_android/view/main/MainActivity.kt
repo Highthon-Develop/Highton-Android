@@ -1,6 +1,8 @@
 package com.example.highton_android.view.main
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -17,10 +19,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
-
-        setSupportActionBar(binding.toolbar)
+        setUpToolbar()
         setUpBottomNavigationView()
+    }
+
+    private fun setUpToolbar() {
+        setSupportActionBar(binding.toolbar)
     }
 
     private fun setUpBottomNavigationView() {
@@ -36,7 +40,26 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
         binding.mainBottomNav.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+        binding.mainBottomNav.selectedItemId = R.id.homeFragment
     }
 
     override fun onNavigateUp(): Boolean = navController.navigateUp() || super.onNavigateUp()
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean =
+        when(item.itemId) {
+            R.id.action_notification -> {
+                makeToast("알림 설정 TODO")
+                true
+            }
+            else -> {
+                super.onOptionsItemSelected(item)
+            }
+        }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar_menu, menu)
+
+        return true
+    }
 }

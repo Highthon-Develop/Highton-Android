@@ -6,4 +6,8 @@
     <string name="single_line_diary">한 줄 일기</string>
     <string name="diary">일기</string>
     <string name="feed">피드</string>
+    <string name="text_follow_recommendation">많은 친구들이\n팔로우했어요!🔥</string>
+    <string name="todays_popular_feed">오늘의 인기 피드</string>
+    <string name="add_content">Add Content</string>
+    <string name="follow">팔로우하기</string>
 </resources>

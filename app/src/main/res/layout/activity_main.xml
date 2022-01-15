@@ -16,6 +16,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:menu="@menu/toolbar_menu"
+            app:titleTextAppearance="@style/Toolbar.TitleText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -26,6 +28,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:defaultNavHost="true"
+            tools:layout="@layout/fragment_home"
             app:layout_constraintBottom_toTopOf="@+id/mainBottomNav"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,9 +40,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:menu="@menu/main_menu"
+            app:labelVisibilityMode="unlabeled"
+            app:itemIconTint="@drawable/style_bottom_menu"
+            app:itemTextColor="@drawable/style_bottom_menu"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:backgroundTint="#C4C4C4"
+            android:src="@drawable/ic_add"
+            app:tint="@color/white"
+            app:borderWidth="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/fragmentContainerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/add_content" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
