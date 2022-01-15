@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="119dp"
+            android:text="친구들을 만나기 위해\n 우리 학교를 찾아주세요"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/search_school_layout"
+            android:layout_width="144dp"
+            android:layout_height="204dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="130dp"
+            android:background="#E5E5E5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="140dp"
+            android:text="학교명\n검색하기"
+            app:layout_constraintStart_toStartOf="@+id/search_school_layout"
+            app:layout_constraintTop_toTopOf="@+id/search_school_layout" />
+
+        <View
+            android:id="@+id/invite_code_layout"
+            android:layout_width="144dp"
+            android:layout_height="204dp"
+            android:layout_marginTop="130dp"
+            android:layout_marginEnd="32dp"
+            android:background="#E5E5E5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="140dp"
+            android:text="초대코드\n입력하기"
+            app:layout_constraintStart_toStartOf="@+id/invite_code_layout"
+            app:layout_constraintTop_toTopOf="@+id/invite_code_layout" />
+
+        <TextView
+            android:id="@+id/search_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:text="검색하는 방법을 모르겠어요"
+            app:layout_constraintStart_toStartOf="@+id/search_school_layout"
+            app:layout_constraintTop_toBottomOf="@+id/search_school_layout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
