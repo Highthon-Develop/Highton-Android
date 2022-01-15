@@ -4,13 +4,10 @@ import android.os.Bundle
 import com.example.highton_android.R
 import com.example.highton_android.base.BaseActivity
 import com.example.highton_android.databinding.ActivityAuthBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-class AuthActivity : BaseActivity() {
-    private val binding = binding<ActivityAuthBinding>(R.layout.activity_auth)
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+@AndroidEntryPoint
+class AuthActivity : BaseActivity<ActivityAuthBinding>(R.layout.activity_auth) {
 
 
-    }
 }
