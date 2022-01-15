@@ -19,7 +19,11 @@
         android:id="@+id/homeFragment"
         android:name="com.example.highton_android.view.main.home.HomeFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_mealFragment"
+            app:destination="@id/mealFragment" />
+    </fragment>
     <fragment
         android:id="@+id/calendarFragment"
         android:name="com.example.highton_android.view.main.CalendarFragment"
@@ -30,5 +34,10 @@
         android:name="com.example.highton_android.view.main.ProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/mealFragment"
+        android:name="com.example.highton_android.view.main.meal.MealFragment"
+        android:label="fragment_meal"
+        tools:layout="@layout/fragment_meal" />
 
 </navigation>

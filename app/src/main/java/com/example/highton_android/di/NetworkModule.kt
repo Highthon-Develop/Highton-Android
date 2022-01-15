@@ -2,7 +2,7 @@ package com.example.highton_android.di
 
 import com.example.highton_android.data.service.ApiService
 import com.example.highton_android.data.service.MealService
-import com.example.highton_android.data.service.RecommendationService
+import com.example.highton_android.data.service.HomeService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,7 +19,7 @@ import javax.inject.Singleton
 object NetworkModule {
 
 
-    private const val BASE_URL = "http://ec2-3-38-40-44.ap-northeast-2.compute.amazonaws.com:3000/"
+    private const val BASE_URL = "http://ec2-15-165-31-31.ap-northeast-2.compute.amazonaws.com:3000/api/"
 
     @Provides
     @Singleton
@@ -71,8 +71,8 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideRecommendationService(retrofit: Retrofit): RecommendationService {
-        return retrofit.create(RecommendationService::class.java)
+    fun provideHomeService(retrofit: Retrofit): HomeService {
+        return retrofit.create(HomeService::class.java)
     }
 
     @Provides

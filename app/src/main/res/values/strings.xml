@@ -10,4 +10,8 @@
     <string name="todays_popular_feed">오늘의 인기 피드</string>
     <string name="add_content">Add Content</string>
     <string name="follow">팔로우하기</string>
+    <string name="todays_meal">놓쳐서는 안 되는\n오늘의 급식!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="allergic"><u>알레르기 유발 성분 확인</u></string>
 </resources>

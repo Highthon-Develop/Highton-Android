@@ -5,24 +5,25 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.highton_android.data.model.recommendation.RecommendationResponse
-import com.example.highton_android.data.repository.RecommendationRepository
+import com.example.highton_android.data.repository.HomeRepository
 import com.example.highton_android.utils.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.lang.Exception
 import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val recommendationRepository: RecommendationRepository
+    private val homeRepository: HomeRepository
 ) : ViewModel() {
     private val _recommendationResult : MutableLiveData<NetworkResult<RecommendationResponse>> = MutableLiveData(NetworkResult.Loading())
     val recommendationResult : LiveData<NetworkResult<RecommendationResponse>> get() = _recommendationResult
 
+
+
     fun getRecommendation() = viewModelScope.launch {
         _recommendationResult.value = try {
-            val response = recommendationRepository.getRecommendation()
+            val response = homeRepository.getRecommendation()
 
             if (response.isSuccessful && response.body() != null)
                 NetworkResult.Success(response.body()!!)
