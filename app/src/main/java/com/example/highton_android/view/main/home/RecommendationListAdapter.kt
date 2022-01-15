@@ -3,11 +3,11 @@ package com.example.highton_android.view.main.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.highton_android.data.model.post.RecommendedPage
+import com.example.highton_android.data.model.recommendation.User
 import com.example.highton_android.databinding.ItemFollowRecommendationListBinding
 
 class RecommendationListAdapter : RecyclerView.Adapter<RecommendationViewHolder>() {
-    private var recommendationList = emptyList<RecommendedPage>()
+    private var recommendationList = emptyList<User>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecommendationViewHolder =
         RecommendationViewHolder.from(parent)
@@ -16,15 +16,15 @@ class RecommendationListAdapter : RecyclerView.Adapter<RecommendationViewHolder>
 
     override fun getItemCount(): Int = recommendationList.size
 
-    fun setData(newList: List<RecommendedPage>) {
+    fun setData(newList: List<User>) {
         recommendationList = newList
         notifyDataSetChanged()
     }
 }
 
 class RecommendationViewHolder(private val binding: ItemFollowRecommendationListBinding) : RecyclerView.ViewHolder(binding.root) {
-    fun bind(recommendation: RecommendedPage) {
-        binding.textTitle.text = recommendation.title
+    fun bind(recommendation: User) {
+        binding.textTitle.text = recommendation.nickname
     }
 
     companion object {
