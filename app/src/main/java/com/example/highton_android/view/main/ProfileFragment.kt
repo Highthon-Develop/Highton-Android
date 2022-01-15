@@ -1,5 +1,6 @@
-package com.example.highton_android
+package com.example.highton_android.view.main
 
+import com.example.highton_android.R
 import com.example.highton_android.base.BaseFragment
 import com.example.highton_android.databinding.FragmentProfileBinding
 

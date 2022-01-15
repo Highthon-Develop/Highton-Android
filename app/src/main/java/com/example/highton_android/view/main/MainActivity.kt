@@ -1,4 +1,4 @@
-package com.example.highton_android.view
+package com.example.highton_android.view.main
 
 import android.os.Bundle
 import com.example.highton_android.R

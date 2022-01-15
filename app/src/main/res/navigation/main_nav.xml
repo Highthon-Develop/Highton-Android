@@ -7,27 +7,27 @@
 
     <fragment
         android:id="@+id/feedFragment"
-        android:name="com.example.highton_android.FeedFragment"
+        android:name="com.example.highton_android.view.main.FeedFragment"
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed" />
     <fragment
         android:id="@+id/diaryFragment"
-        android:name="com.example.highton_android.DiaryFragment"
+        android:name="com.example.highton_android.view.main.DiaryFragment"
         android:label="fragment_diary"
         tools:layout="@layout/fragment_diary" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.highton_android.HomeFragment"
+        android:name="com.example.highton_android.view.main.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/calendarFragment"
-        android:name="com.example.highton_android.CalendarFragment"
+        android:name="com.example.highton_android.view.main.CalendarFragment"
         android:label="fragment_calendar"
         tools:layout="@layout/fragment_calendar" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.highton_android.ProfileFragment"
+        android:name="com.example.highton_android.view.main.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>
