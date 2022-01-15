@@ -17,10 +17,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
-
-        setSupportActionBar(binding.toolbar)
+        setUpToolbar()
         setUpBottomNavigationView()
+    }
+
+    private fun setUpToolbar() {
+        setSupportActionBar(binding.toolbar)
     }
 
     private fun setUpBottomNavigationView() {
@@ -36,6 +38,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
         binding.mainBottomNav.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+        binding.mainBottomNav.selectedItemId = R.id.homeFragment
     }
 
     override fun onNavigateUp(): Boolean = navController.navigateUp() || super.onNavigateUp()
