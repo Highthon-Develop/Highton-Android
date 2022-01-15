@@ -5,15 +5,19 @@ import com.example.highton_android.data.model.auth.request.LoginRequest
 import com.example.highton_android.data.model.auth.response.AccountResponse
 import com.example.highton_android.data.model.auth.response.LoginResponse
 import retrofit2.Response
+import retrofit2.http.Body
+import retrofit2.http.POST
 
 interface AuthService {
 
 
+    @POST("account")
     suspend fun postAccount(
-        body : AccountRequest
-    ):Response<AccountResponse>
+        @Body body: AccountRequest
+    ): Response<AccountResponse>
 
+    @POST("account/login")
     suspend fun postLogin(
-        body : LoginRequest
-    ):Response<LoginResponse>
+        @Body body: LoginRequest
+    ): Response<LoginResponse>
 }
