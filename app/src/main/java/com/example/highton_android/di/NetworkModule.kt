@@ -1,5 +1,6 @@
 package com.example.highton_android.di
 
+import com.example.highton_android.data.service.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -9,12 +10,10 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-// Singleton, Provides 쓸때 private 말고 public 으로 해야한다.
 object NetworkModule {
 
 
@@ -54,8 +53,20 @@ object NetworkModule {
 
             .addConverterFactory(gsonConverterFactory)
             .build()
-
     }
+
+    @Provides
+    @Singleton
+    fun provideApiService(retrofit: Retrofit): ApiService {
+        return retrofit.create(ApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideConverterFactory(): GsonConverterFactory {
+        return GsonConverterFactory.create()
+    }
+
 
 
     // 서버로 부터 받아온 데이터 log 찍기
