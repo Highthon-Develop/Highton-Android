@@ -1,6 +1,7 @@
 package com.example.highton_android.view.main
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.navigation.NavController
@@ -17,7 +18,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     private val navController: NavController by lazy {
-        (supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment).navController }
+        (supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment).navController
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,19 +48,20 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
         binding.mainBottomNav.selectedItemId = R.id.homeFragment
 
-        when(navController.currentDestination?.id){
-            R.id.diaryFragment->{
-                binding.fabAdd.setOnClickListener {
-                    findNavController(R.id.diaryFragment).navigate(R.id.action_diaryFragment_to_diaryWriteFragment)
-                }
+        binding.fabAdd.setOnClickListener {
+            when(navController.currentDestination?.id){
+                    R.id.diaryFragment->{
+                        navController.navigate(R.id.action_diaryFragment_to_diaryWriteFragment)
+                    }
             }
         }
+
     }
 
     override fun onNavigateUp(): Boolean = navController.navigateUp() || super.onNavigateUp()
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
-        when(item.itemId) {
+        when (item.itemId) {
             R.id.action_notification -> {
                 makeToast("알림 설정 TODO")
                 true
