@@ -1,7 +1,8 @@
-package com.example.highton_android
+package com.example.highton_android.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.highton_android.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
