@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -44,6 +45,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.mainBottomNav.selectedItemId = R.id.homeFragment
+
+        when(navController.currentDestination?.getId()){
+            R.id.diaryFragment->{
+                binding.fabAdd.setOnClickListener {
+                    findNavController(R.id.diaryFragment).navigate(R.id.action_diaryFragment_to_diaryWriteFragment)
+                }
+            }
+        }
     }
 
     override fun onNavigateUp(): Boolean = navController.navigateUp() || super.onNavigateUp()

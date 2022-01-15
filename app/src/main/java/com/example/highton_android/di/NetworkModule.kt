@@ -1,9 +1,6 @@
 package com.example.highton_android.di
 
-import com.example.highton_android.data.service.AuthService
-import com.example.highton_android.data.service.SearchSchoolService
-import com.example.highton_android.data.service.MealService
-import com.example.highton_android.data.service.RecommendationService
+import com.example.highton_android.data.service.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -78,25 +75,31 @@ object NetworkModule {
             .build()
     }
 
+
+
     @Provides
     @Singleton
-    fun provideApiService(    @Named("main")retrofit: Retrofit): AuthService {
-        return retrofit.create(AuthService::class.java)
-    }
-    @Provides
-    @Singleton
-    fun provideSearchSchoolService(    @Named("school")retrofit: Retrofit): SearchSchoolService {
-        return retrofit.create(SearchSchoolService::class.java)
-    }
-    @Provides
-    @Singleton
-    fun provideMealService(retrofit: Retrofit): MealService {
+    fun provideMealService( @Named("main")retrofit: Retrofit): MealService {
         return retrofit.create(MealService::class.java)
     }
 
     @Provides
     @Singleton
-    fun provideRecommendationService(retrofit: Retrofit): RecommendationService {
+    fun provideDiaryService( @Named("main")retrofit: Retrofit): DiaryService {
+        return retrofit.create(DiaryService::class.java)
+    }
+
+
+    @Provides
+    @Singleton
+    fun provideFeedService( @Named("main")retrofit: Retrofit): FeedService {
+        return retrofit.create(FeedService::class.java)
+    }
+
+
+    @Provides
+    @Singleton
+    fun provideRecommendationService( @Named("main")retrofit: Retrofit): RecommendationService {
         return retrofit.create(RecommendationService::class.java)
     }
 

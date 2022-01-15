@@ -14,7 +14,11 @@
         android:id="@+id/diaryFragment"
         android:name="com.example.highton_android.view.main.DiaryFragment"
         android:label="@string/single_line_diary"
-        tools:layout="@layout/fragment_diary" />
+        tools:layout="@layout/fragment_diary" >
+        <action
+            android:id="@+id/action_diaryFragment_to_diaryWriteFragment"
+            app:destination="@id/diaryWriteFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.highton_android.view.main.home.HomeFragment"
@@ -30,5 +34,16 @@
         android:name="com.example.highton_android.view.main.ProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/diaryWriteFragment"
+        tools:layout="@layout/fragment_wirte_diary"
+
+        android:name="com.example.highton_android.view.main.DiaryWriteFragment"
+        android:label="@string/single_line_diary"
+        >
+        <action
+            android:id="@+id/action_diaryWriteFragment_to_diaryFragment"
+            app:destination="@id/diaryFragment" />
+    </fragment>
 
 </navigation>
