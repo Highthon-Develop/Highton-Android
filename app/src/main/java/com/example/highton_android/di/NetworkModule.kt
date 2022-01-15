@@ -1,6 +1,7 @@
 package com.example.highton_android.di
 
 import com.example.highton_android.data.service.ApiService
+import com.example.highton_android.data.service.MealService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -59,6 +60,12 @@ object NetworkModule {
     @Singleton
     fun provideApiService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideMealService(retrofit: Retrofit): MealService {
+        return retrofit.create(MealService::class.java)
     }
 
     @Provides
