@@ -11,7 +11,7 @@
         android:name=".utils.App"
         android:theme="@style/Theme.HightonAndroid">
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
