@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:backgroundTint="#C4C4C4"
+            android:backgroundTint="@color/record_blue"
             android:src="@drawable/ic_add"
             app:tint="@color/white"
             app:borderWidth="0dp"
