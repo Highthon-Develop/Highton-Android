@@ -13,7 +13,7 @@ interface DiaryService {
 
     @GET("diary")
     suspend fun getDiary(
-        @Header("authorization ") token: String
+        @Header("authorization") token: String
     ): Response<GetDiaryResponse>
 
     @POST("diary")

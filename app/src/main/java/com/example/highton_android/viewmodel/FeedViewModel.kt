@@ -11,7 +11,7 @@ import androidx.paging.cachedIn
 import com.example.highton_android.data.FeedPagingDataSource
 import com.example.highton_android.data.model.feed.request.PostSchoolEventRequest
 import com.example.highton_android.data.model.feed.response.Content
-import com.example.highton_android.data.repository.FeedRepository
+//import com.example.highton_android.data.repository.FeedRepository
 import com.example.highton_android.data.service.FeedService
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
@@ -20,27 +20,27 @@ import javax.inject.Inject
 
 @HiltViewModel
 class FeedViewModel @Inject constructor(
-    private val repository: FeedRepository,
+//    private val repository: FeedRepository,
     private val api:FeedService
 ) : ViewModel() {
 
     private val _isSuccess = MutableLiveData<Boolean>()
     val isSuccess: LiveData<Boolean> get() = _isSuccess
-    suspend fun postSchoolEvent(
-        token: String,
-        body: PostSchoolEventRequest
-    ) {
-        viewModelScope.launch {
-            repository.postSchoolEvent(token, body).let { response ->
-                if (response.isSuccessful) {
-                    _isSuccess.value = response.body()?.success
-                } else {
-                    _isSuccess.value = response.body()?.success
-                }
-            }
-
-        }
-    }
+//    suspend fun postSchoolEvent(
+//        token: String,
+//        body: PostSchoolEventRequest
+//    ) {
+//        viewModelScope.launch {
+//            repository.postSchoolEvent(token, body).let { response ->
+//                if (response.isSuccessful) {
+//                    _isSuccess.value = response.body()?.success
+//                } else {
+//                    _isSuccess.value = response.body()?.success
+//                }
+//            }
+//
+//        }
+//    }
 
     fun getSchoolEvent(query: String): Flow<PagingData<Content>> {
 

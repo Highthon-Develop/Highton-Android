@@ -9,7 +9,6 @@ import com.example.highton_android.data.model.auth.response.LoginResponse
 import com.example.highton_android.data.service.AuthService
 import com.example.highton_android.data.service.SearchSchoolService
 import retrofit2.Response
-import retrofit2.http.Query
 import javax.inject.Inject
 
 class AuthRepository @Inject constructor(
