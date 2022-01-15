@@ -8,7 +8,9 @@ import com.example.highton_android.base.BaseFragment
 import com.example.highton_android.data.model.diary.PostDiaryRequest
 import com.example.highton_android.databinding.FragmentWirteDiaryBinding
 import com.example.highton_android.viewmodel.DiaryViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+@AndroidEntryPoint
 
 class DiaryWriteFragment : BaseFragment<FragmentWirteDiaryBinding>(R.layout.fragment_wirte_diary) {
     private val viewModel: DiaryViewModel by viewModels()

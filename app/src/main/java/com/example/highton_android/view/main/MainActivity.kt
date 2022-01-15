@@ -46,7 +46,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
         binding.mainBottomNav.selectedItemId = R.id.homeFragment
 
-        when(navController.currentDestination?.getId()){
+        when(navController.currentDestination?.id){
             R.id.diaryFragment->{
                 binding.fabAdd.setOnClickListener {
                     findNavController(R.id.diaryFragment).navigate(R.id.action_diaryFragment_to_diaryWriteFragment)
