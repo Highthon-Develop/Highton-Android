@@ -10,6 +10,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -18,6 +19,7 @@ object NetworkModule {
 
 
     private const val BASE_URL = "http://ec2-3-38-40-44.ap-northeast-2.compute.amazonaws.com:3000/"
+    private const val SCHOOL_BASE_URL = "https://open.neis.go.kr/"
 
     @Provides
     @Singleton
@@ -38,6 +40,7 @@ object NetworkModule {
 
     }
 
+    @Named("main")
     @Singleton
     @Provides
     fun provideRetrofitInstance(
@@ -54,36 +57,49 @@ object NetworkModule {
             .addConverterFactory(gsonConverterFactory)
             .build()
     }
-
-    @Provides
+    @Named("school")
     @Singleton
-    fun provideApiService(retrofit: Retrofit): ApiService {
-        return retrofit.create(ApiService::class.java)
+    @Provides
+    fun provideSchoolInstance(
+        okHttpClient: OkHttpClient,
+        gsonConverterFactory: GsonConverterFactory
+    ): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(SCHOOL_BASE_URL)
+            .client(okHttpClient)
+            //json 변화기 Factory
+
+            .client(provideHttpClient())
+
+            .addConverterFactory(gsonConverterFactory)
+            .build()
     }
 
+
+
     @Provides
     @Singleton
-    fun provideMealService(retrofit: Retrofit): MealService {
+    fun provideMealService( @Named("main")retrofit: Retrofit): MealService {
         return retrofit.create(MealService::class.java)
     }
 
     @Provides
     @Singleton
-    fun provideDiaryService(retrofit: Retrofit): DiaryService {
+    fun provideDiaryService( @Named("main")retrofit: Retrofit): DiaryService {
         return retrofit.create(DiaryService::class.java)
     }
 
 
     @Provides
     @Singleton
-    fun provideFeedService(retrofit: Retrofit): FeedService {
+    fun provideFeedService( @Named("main")retrofit: Retrofit): FeedService {
         return retrofit.create(FeedService::class.java)
     }
 
 
     @Provides
     @Singleton
-    fun provideRecommendationService(retrofit: Retrofit): RecommendationService {
+    fun provideRecommendationService( @Named("main")retrofit: Retrofit): RecommendationService {
         return retrofit.create(RecommendationService::class.java)
     }
 

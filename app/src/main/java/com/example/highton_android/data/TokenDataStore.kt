@@ -10,7 +10,7 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.example.highton_android.data.TokenDataStore.Companion.PREFERENCE_NAME
 import com.example.highton_android.data.TokenDataStore.PreferencesKeys.dataStoreToken
-import com.example.highton_android.data.model.Token
+import com.example.highton_android.data.model.auth.Token
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ActivityRetainedScoped
 import kotlinx.coroutines.flow.Flow
