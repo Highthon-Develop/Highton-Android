@@ -16,6 +16,20 @@
         <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/fragment_auth_school_search_finish.xml" value="0.18" />
         <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/fragment_auth_student_information.xml" value="0.25" />
         <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/search_school_item.xml" value="0.1" />
+        <entry key="..\:/Coding/Highton-Android/app/src/main/res/drawable/ic_add.xml" value="0.3875" />
+        <entry key="..\:/Coding/Highton-Android/app/src/main/res/drawable/style_bottom_menu.xml" value="0.3875" />
+        <entry key="..\:/Coding/Highton-Android/app/src/main/res/drawable/style_button_follow.xml" value="0.3875" />
+        <entry key="..\:/Coding/Highton-Android/app/src/main/res/layout/activity_auth.xml" value="0.26944444444444443" />
+        <entry key="..\:/Coding/Highton-Android/app/src/main/res/layout/activity_main.xml" value="0.37135416666666665" />
+        <entry key="..\:/Coding/Highton-Android/app/src/main/res/layout/fragment_calendar.xml" value="0.37135416666666665" />
+        <entry key="..\:/Coding/Highton-Android/app/src/main/res/layout/fragment_diary.xml" value="0.37135416666666665" />
+        <entry key="..\:/Coding/Highton-Android/app/src/main/res/layout/fragment_feed.xml" value="0.37135416666666665" />
+        <entry key="..\:/Coding/Highton-Android/app/src/main/res/layout/fragment_home.xml" value="0.37135416666666665" />
+        <entry key="..\:/Coding/Highton-Android/app/src/main/res/layout/fragment_profile.xml" value="0.37135416666666665" />
+        <entry key="..\:/Coding/Highton-Android/app/src/main/res/layout/item_follow_recommendation_list.xml" value="0.5" />
+        <entry key="..\:/Coding/Highton-Android/app/src/main/res/layout/item_todays_popular_feed_list.xml" value="0.37135416666666665" />
+        <entry key="..\:/Coding/Highton-Android/app/src/main/res/menu/main_menu.xml" value="0.37135416666666665" />
+        <entry key="..\:/Coding/Highton-Android/app/src/main/res/menu/toolbar_menu.xml" value="0.37135416666666665" />
       </map>
     </option>
   </component>
