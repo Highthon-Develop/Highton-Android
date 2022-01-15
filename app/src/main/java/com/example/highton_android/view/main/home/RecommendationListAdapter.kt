@@ -28,6 +28,7 @@ class RecommendationViewHolder(private val binding: ItemFollowRecommendationList
         binding.textTitle.text = recommendation.nickname
         binding.buttonFollow.setOnClickListener {
             Toast.makeText(it.context, "${recommendation.nickname}님을 팔로우합니다.", Toast.LENGTH_SHORT).show()
+            binding.buttonFollow.text = "팔로잉"
         }
     }
 
