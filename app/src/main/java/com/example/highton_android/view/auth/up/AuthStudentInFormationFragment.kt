@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.highton_android.R
 import com.example.highton_android.base.BaseFragment
 import com.example.highton_android.data.model.auth.request.AccountRequest
@@ -18,7 +19,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class AuthStudentInFormationFragment :
     BaseFragment<FragmentAuthStudentInformationBinding>(R.layout.fragment_auth_student_information) {
-    private var sexText = "남성"
+    private var sexText = "Male"
     private var setGrade = 1
     private val viewModel: AuthViewModel by activityViewModels()
     override fun FragmentAuthStudentInformationBinding.onCreateView() {
@@ -31,6 +32,17 @@ class AuthStudentInFormationFragment :
         setSex()
         setGrade()
         postAccount()
+        with(viewModel) {
+            isSuccess.observe(viewLifecycleOwner) {
+                if (it)
+                    findNavController().navigate(R.id.action_authStudentInFormationFragment_to_loginFragment)else
+                    Toast.makeText(requireContext(),"실패",Toast.LENGTH_SHORT).show()
+
+            }
+            isFailure.observe(viewLifecycleOwner){
+                Toast.makeText(requireContext(),it,Toast.LENGTH_SHORT).show()
+            }
+        }
 
     }
 
@@ -63,14 +75,14 @@ class AuthStudentInFormationFragment :
     private fun setSex() {
 
         binding.mainText.setOnClickListener {
-            sexText = "남성"
+            sexText = "Male"
             binding.mainText.setBackgroundResource(R.drawable.item_bg_on);
             binding.mainText.setTextColor(Color.WHITE);
             binding.girlText.setBackgroundResource(R.drawable.item_bg_outline);
             binding.girlText.setTextColor(Color.GRAY);
         }
         binding.girlText.setOnClickListener {
-            sexText = "여성"
+            sexText = "Female"
             binding.girlText.setBackgroundResource(R.drawable.item_bg_on);
             binding.girlText.setTextColor(Color.WHITE);
             binding.mainText.setBackgroundResource(R.drawable.item_bg_outline);
