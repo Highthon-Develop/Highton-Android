@@ -88,6 +88,16 @@ object NetworkModule {
     fun provideDiaryService( @Named("main")retrofit: Retrofit): DiaryService {
         return retrofit.create(DiaryService::class.java)
     }
+    @Provides
+    @Singleton
+    fun provideAuthService( @Named("main")retrofit: Retrofit): AuthService {
+        return retrofit.create(AuthService::class.java)
+    }
+    @Provides
+    @Singleton
+    fun provideSearchSchoolService( @Named("main")retrofit: Retrofit): SearchSchoolService {
+        return retrofit.create(SearchSchoolService::class.java)
+    }
 
 
     @Provides

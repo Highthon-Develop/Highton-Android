@@ -8,3 +8,5 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class AuthActivity : BaseActivity<ActivityAuthBinding>(R.layout.activity_auth) {
+
+}
