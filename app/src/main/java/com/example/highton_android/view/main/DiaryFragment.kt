@@ -1,5 +1,6 @@
 package com.example.highton_android.view.main
 
+import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
@@ -30,19 +31,23 @@ class DiaryFragment : BaseFragment<FragmentDiaryBinding>(R.layout.fragment_diary
     override fun FragmentDiaryBinding.onViewCreated() {
         setAdapter()
         with(diaryViewModel){
-            lifecycleScope.launch {
-                getDiary(token)
-            }
+
             diaryData.observe(viewLifecycleOwner){
+                Log.d("TAG", "onViewCreated: ${it}")
                 diaryAdapter.setData(it)
 
             }
         }
     }
-    fun getToken(){
+    private fun getToken(): String {
         viewModel.readToken.asLiveData().observe(viewLifecycleOwner){
-            token=it.token
+            lifecycleScope.launch {
+
+                diaryViewModel.getDiary(it.token)
+
+            }
         }
+        return token
     }
 
     private fun setAdapter() {
