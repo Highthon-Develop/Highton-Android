@@ -3,11 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Coding/Highton-Android/app/src/main/res/layout/activity_auth.xml" value="0.26944444444444443" />
+        <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/drawable/item_bg_on.xml" value="0.28671875" />
+        <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/drawable/item_bg_outline.xml" value="0.28671875" />
+        <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/font/font.xml" value="0.23489583333333333" />
+        <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/activity_auth.xml" value="0.25" />
+        <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/fargment_auth_school_registration.xml" value="0.23369565217391305" />
+        <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/fragment_auth_find_password.xml" value="0.13446824789594491" />
+        <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/fragment_auth_login.xml" value="0.22" />
+        <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/fragment_auth_student_information.xml" value="0.25" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
