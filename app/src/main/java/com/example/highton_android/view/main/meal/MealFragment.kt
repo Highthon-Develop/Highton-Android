@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.asLiveData
+import androidx.navigation.fragment.findNavController
 import com.example.highton_android.R
 import com.example.highton_android.base.BaseFragment
 import com.example.highton_android.databinding.FragmentMealBinding
@@ -18,6 +19,14 @@ class MealFragment : BaseFragment<FragmentMealBinding>(R.layout.fragment_meal) {
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun FragmentMealBinding.onCreateView() {
+        observeData()
+
+        binding.buttonClose.setOnClickListener {
+            findNavController().popBackStack()
+        }
+    }
+
+    fun observeData() {
         mealViewModel.readToken.asLiveData().observe(viewLifecycleOwner) {
             mealViewModel.getUser(it.token)
         }
