@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav"
+    app:startDestination="@id/schoolRegistrationFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.highton_android.view.auth.in.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_auth_login">
+
+    </fragment>
+    <fragment
+        android:id="@+id/authStudentInFormationFragment"
+        tools:layout="@layout/fragment_auth_student_information"
+        android:name="com.example.highton_android.view.auth.up.AuthStudentInFormationFragment"
+        android:label="AuthStudentInFormationFragment" />
+    <fragment
+        android:id="@+id/schoolRegistrationFragment"
+        tools:layout="@layout/fargment_auth_school_registration"
+        android:name="com.example.highton_android.view.auth.up.SchoolRegistrationFragment"
+        android:label="SchoolRegistrationFragment" >
+        <action
+            android:id="@+id/action_schoolRegistrationFragment_to_authStudentInFormationFragment"
+            app:destination="@id/authStudentInFormationFragment" />
+    </fragment>
+</navigation>
