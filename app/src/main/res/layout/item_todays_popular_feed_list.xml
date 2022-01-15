@@ -21,7 +21,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="108dp"
+                android:layout_marginTop="100dp"
                 android:fontFamily="@font/pretendard_semibold"
                 android:text="오늘자 OO 발표회\n레전드"
                 android:textColor="@color/black"

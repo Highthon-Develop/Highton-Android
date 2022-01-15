@@ -20,12 +20,12 @@
                 android:id="@+id/textTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:maxLines="2"
-                android:ellipsize="end"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="108dp"
+                android:layout_marginTop="100dp"
                 android:layout_marginBottom="20dp"
+                android:ellipsize="end"
                 android:fontFamily="@font/pretendard_semibold"
+                android:maxLines="2"
                 android:text="OO고등학교 \n공식 홈페이지"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -33,7 +33,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="0.0" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonFollow"

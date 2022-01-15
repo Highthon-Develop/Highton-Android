@@ -9,22 +9,24 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            tools:context=".view.main.HomeFragment">
+            tools:context=".view.main.home.HomeFragment">
 
             <TextView
                 android:id="@+id/textFollowRecommendation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:text="@string/text_follow_recommendation"
-                android:textSize="24sp"
-                android:textColor="@color/black"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="36dp"
                 android:fontFamily="@font/pretendard_semibold"
+                android:text="@string/text_follow_recommendation"
+                android:textColor="@color/black"
+                android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,18 +34,21 @@
                 android:id="@+id/followRecommendationList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="24dp"
-                tools:listitem="@layout/item_follow_recommendation_list"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textFollowRecommendation" />
+                app:layout_constraintTop_toBottomOf="@+id/textFollowRecommendation"
+                tools:listitem="@layout/item_follow_recommendation_list" />
 
             <TextView
                 android:id="@+id/textPopularFeed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/pretendard_semibold"
                 android:text="@string/todays_popular_feed"
@@ -56,13 +61,15 @@
                 android:id="@+id/todaysPopularFeedList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="24dp"
-                tools:listitem="@layout/item_todays_popular_feed_list"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textPopularFeed" />
+                app:layout_constraintTop_toBottomOf="@+id/textPopularFeed"
+                tools:listitem="@layout/item_todays_popular_feed_list" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>
