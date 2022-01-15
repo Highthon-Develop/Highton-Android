@@ -18,7 +18,7 @@ import javax.inject.Singleton
 object NetworkModule {
 
 
-    private const val BASE_URL = "http://ec2-3-38-40-44.ap-northeast-2.compute.amazonaws.com:3000/"
+    private const val BASE_URL = "http://ec2-15-165-31-31.ap-northeast-2.compute.amazonaws.com:3000/"
     private const val SCHOOL_BASE_URL = "https://open.neis.go.kr/"
 
     @Provides
@@ -95,7 +95,7 @@ object NetworkModule {
     }
     @Provides
     @Singleton
-    fun provideSearchSchoolService( @Named("main")retrofit: Retrofit): SearchSchoolService {
+    fun provideSearchSchoolService( @Named("school")retrofit: Retrofit): SearchSchoolService {
         return retrofit.create(SearchSchoolService::class.java)
     }
 
