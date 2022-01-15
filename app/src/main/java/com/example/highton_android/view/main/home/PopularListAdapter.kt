@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.highton_android.data.model.post.PopularFeed
-import com.example.highton_android.data.model.post.RecommendedPage
 import com.example.highton_android.databinding.ItemTodaysPopularFeedListBinding
 
 class PopularListAdapter : RecyclerView.Adapter<PopularViewHolder>() {

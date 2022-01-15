@@ -11,7 +11,9 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.highton_android.R
 import com.example.highton_android.base.BaseActivity
 import com.example.highton_android.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     private val navController: NavController by lazy {
         (supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment).navController }
