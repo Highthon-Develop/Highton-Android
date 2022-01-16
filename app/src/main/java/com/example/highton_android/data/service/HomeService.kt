@@ -1,8 +1,8 @@
 package com.example.highton_android.data.service
 
-import com.example.highton_android.data.model.meal.DetailedUser
+import com.example.highton_android.data.model.profile.DetailedUser
+import com.example.highton_android.data.model.profile.UserResponse
 import com.example.highton_android.data.model.recommendation.RecommendationResponse
-import com.example.highton_android.data.model.recommendation.User
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -17,5 +17,5 @@ interface HomeService {
     suspend fun unfollowUser(@Header("Authorization") token: String, @Body targetUserIdx: Int): Response<Boolean>
 
     @GET("/user/profile")
-    suspend fun getProfile(@Header("Authorization") token: String): Response<DetailedUser>
+    suspend fun getProfile(@Header("Authorization") token: String): Response<UserResponse>
 }
