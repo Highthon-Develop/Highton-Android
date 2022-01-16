@@ -9,7 +9,11 @@
         android:id="@+id/feedFragment"
         android:name="com.example.highton_android.view.main.FeedFragment"
         android:label="@string/feed"
-        tools:layout="@layout/fragment_feed" />
+        tools:layout="@layout/fragment_feed" >
+        <action
+            android:id="@+id/action_feedFragment_to_feedInforFragment"
+            app:destination="@id/feedInforFragment" />
+    </fragment>
     <fragment
         android:id="@+id/diaryFragment"
         android:name="com.example.highton_android.view.main.DiaryFragment"
@@ -44,6 +48,14 @@
         <action
             android:id="@+id/action_diaryWriteFragment_to_diaryFragment"
             app:destination="@id/diaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/feedInforFragment"
+        android:name="com.example.highton_android.view.main.FeedInforFragment"
+        android:label="피드" >
+        <action
+            android:id="@+id/action_feedInforFragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
     </fragment>
 
 </navigation>
