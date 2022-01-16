@@ -20,6 +20,7 @@
         <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/drawable/ca_radius.xml" value="0.28671875" />
         <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/drawable/feed_emoji_radius.xml" value="0.1" />
         <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/drawable/feed_repply_radius.xml" value="0.1" />
+        <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.28671875" />
         <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/drawable/item_bg_on.xml" value="0.28671875" />
         <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/drawable/item_bg_outline.xml" value="0.28671875" />
         <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/drawable/style_view_round_gray.xml" value="0.13819444444444445" />
@@ -44,6 +45,8 @@
         <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/item_follow_recommendation_list.xml" value="0.25" />
         <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/item_todays_popular_feed_list.xml" value="0.2" />
         <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/layout/search_school_item.xml" value="0.1" />
+        <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.10069444444444445" />
+        <entry key="..\:/Users/2004c/AndroidStudioProjects/HightonAndroid/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.28671875" />
       </map>
     </option>
   </component>
