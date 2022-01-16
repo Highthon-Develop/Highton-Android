@@ -5,7 +5,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.*
 import com.example.highton_android.data.TokenDataStore
-import com.example.highton_android.data.model.meal.DetailedUser
+import com.example.highton_android.data.model.profile.DetailedUser
 import com.example.highton_android.data.repository.HomeRepository
 import com.example.highton_android.data.repository.MealRepository
 import com.example.highton_android.utils.NetworkResult
@@ -63,8 +63,8 @@ class MealViewModel @Inject constructor(
         _user.value = try {
             val response = homeRepository.getProfile(token)
 
-            if (response.isSuccessful)
-                response.body()
+            if (response.isSuccessful && response.body()!!.success)
+                response.body()!!.content
             else
                 null
         } catch (e: Exception) {

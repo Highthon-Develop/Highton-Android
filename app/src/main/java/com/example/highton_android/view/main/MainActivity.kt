@@ -1,9 +1,11 @@
 package com.example.highton_android.view.main
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.activity.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -12,10 +14,13 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.highton_android.R
 import com.example.highton_android.base.BaseActivity
 import com.example.highton_android.databinding.ActivityMainBinding
+import com.example.highton_android.utils.NetworkResult
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
+    private val mainViewModel: MainViewModel by viewModels()
+
     private val navController: NavController by lazy {
         (supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment).navController
     }
@@ -25,6 +30,31 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
         setUpToolbar()
         setUpBottomNavigationView()
+        getUser()
+    }
+
+    private fun getUser() {
+        if (mainViewModel.token.value == null) {
+            mainViewModel.getToken()
+        }
+
+        mainViewModel.token.observe(this) {
+            mainViewModel.getUser()
+        }
+
+        mainViewModel.user.observe(this) { response ->
+            when(response) {
+                is NetworkResult.Success -> {
+
+                }
+                is NetworkResult.Error -> {
+
+                }
+                is NetworkResult.Loading -> {
+
+                }
+            }
+        }
     }
 
     private fun setUpToolbar() {
