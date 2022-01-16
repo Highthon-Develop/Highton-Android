@@ -73,6 +73,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         binding.fabAdd.visibility = if (isVisible) View.VISIBLE else View.GONE
     }
 
+    fun setFabVisibility(isVisible: Boolean) {
+        binding.fabAdd.visibility = if (isVisible) View.VISIBLE else View.GONE
+    }
+
     private fun setUpBottomNavigationView() {
         val appBarConfiguration = AppBarConfiguration(
             setOf(

@@ -21,4 +21,14 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_p
             }
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as MainActivity).setFabVisibility(false)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        (activity as MainActivity).setFabVisibility(true)
+    }
 }
