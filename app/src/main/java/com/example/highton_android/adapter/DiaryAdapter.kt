@@ -6,7 +6,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.highton_android.R
-import com.example.highton_android.data.model.diary.GetDiaryResponse
 import com.example.highton_android.databinding.ItemDiaryItemBinding
 
 class DiaryAdapter : RecyclerView.Adapter<DiaryAdapter.DiaryHolder>() {

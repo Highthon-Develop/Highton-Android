@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.highton_android.R
 import com.example.highton_android.adapter.DiaryAdapter
@@ -54,7 +55,7 @@ class DiaryFragment : BaseFragment<FragmentDiaryBinding>(R.layout.fragment_diary
         binding.diaryRecycler.apply {
             adapter = diaryAdapter
             layoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                GridLayoutManager(requireContext(),2, LinearLayoutManager.VERTICAL, false)
         }
     }
 }
