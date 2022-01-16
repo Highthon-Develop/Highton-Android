@@ -2,6 +2,7 @@ package com.example.highton_android.view.main.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.highton_android.data.model.recommendation.User
 import com.example.highton_android.databinding.ItemFollowRecommendationListBinding
@@ -25,6 +26,10 @@ class RecommendationListAdapter : RecyclerView.Adapter<RecommendationViewHolder>
 class RecommendationViewHolder(private val binding: ItemFollowRecommendationListBinding) : RecyclerView.ViewHolder(binding.root) {
     fun bind(recommendation: User) {
         binding.textTitle.text = recommendation.nickname
+        binding.buttonFollow.setOnClickListener {
+            Toast.makeText(it.context, "${recommendation.nickname}님을 팔로우합니다.", Toast.LENGTH_SHORT).show()
+            binding.buttonFollow.text = "팔로잉"
+        }
     }
 
     companion object {
