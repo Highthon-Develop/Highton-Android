@@ -1,5 +1,6 @@
 package com.example.highton_android.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -23,6 +24,7 @@ class DiaryViewModel @Inject constructor(
     suspend fun getDiary(token: String) {
         viewModelScope.launch {
             repository.getDiary(token).let { response ->
+                Log.d("TAG", "getDiary: ${response}")
                 if (response.isSuccessful) {
                     _diaryData.value = response.body()?.content
                 }
@@ -32,10 +34,10 @@ class DiaryViewModel @Inject constructor(
 
     }
 
-    suspend fun postDiary(body: PostDiaryRequest) {
+    suspend fun postDiary(token:String,body: PostDiaryRequest) {
         viewModelScope.launch {
-            repository.postDiary(body).let { response ->
-                _isSuccess.value = response.body()?.success
+            repository.postDiary(token,body).let { response ->
+                _isSuccess.value = response.isSuccessful
 
             }
         }

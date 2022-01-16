@@ -18,6 +18,7 @@ interface DiaryService {
 
     @POST("diary")
     suspend fun postDiary(
+        @Header("authorization") token: String,
         @Body body: PostDiaryRequest
     ): Response<PostDiaryResponse>
 }
