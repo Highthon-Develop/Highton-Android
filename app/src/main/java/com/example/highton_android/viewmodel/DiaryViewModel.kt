@@ -23,20 +23,24 @@ class DiaryViewModel @Inject constructor(
 
     suspend fun getDiary(token: String) {
         viewModelScope.launch {
-            repository.getDiary(token).let { response ->
-                Log.d("TAG", "getDiary: ${response}")
-                if (response.isSuccessful) {
-                    _diaryData.value = response.body()?.content
+            try {
+                repository.getDiary(token).let { response ->
+                    Log.d("TAG", "getDiary: ${response}")
+                    if (response.isSuccessful) {
+                        _diaryData.value = response.body()?.content
+                    }
+
                 }
+            } catch (e: Exception) {
 
             }
         }
 
     }
 
-    suspend fun postDiary(token:String,body: PostDiaryRequest) {
+    suspend fun postDiary(token: String, body: PostDiaryRequest) {
         viewModelScope.launch {
-            repository.postDiary(token,body).let { response ->
+            repository.postDiary(token, body).let { response ->
                 _isSuccess.value = response.isSuccessful
 
             }
