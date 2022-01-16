@@ -80,4 +80,6 @@ dependencies {
 
 // LiveData
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    implementation 'com.mikhaellopez:circularimageview:4.3.0'
 }
