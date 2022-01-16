@@ -1,10 +1,13 @@
-package com.example.highton_android.data.model.meal
+package com.example.highton_android.data.model.profile
+
 
 import com.google.gson.annotations.SerializedName
 
-data class DetailedUser (
+data class DetailedUser(
     @SerializedName("id")
     val id: Int,
+    @SerializedName("profileImg")
+    val profileImg: Any,
     @SerializedName("name")
     val name: String,
     @SerializedName("grade")
@@ -17,6 +20,7 @@ data class DetailedUser (
     val birthDay: String,
     @SerializedName("email")
     val email: String,
+    @SerializedName("password")
     val password: String,
     @SerializedName("createdAt")
     val createdAt: String,
