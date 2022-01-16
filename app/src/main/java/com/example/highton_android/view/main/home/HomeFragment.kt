@@ -1,13 +1,18 @@
 package com.example.highton_android.view.main.home
 
+import android.os.Build
 import android.util.Log
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.highton_android.R
 import com.example.highton_android.base.BaseFragment
 import com.example.highton_android.data.model.post.PopularFeed
 import com.example.highton_android.databinding.FragmentHomeBinding
 import com.example.highton_android.utils.NetworkResult
 import dagger.hilt.android.AndroidEntryPoint
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
@@ -15,11 +20,17 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     private val popularListAdapter by lazy { PopularListAdapter() }
     private val homeViewModel: HomeViewModel by viewModels()
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun FragmentHomeBinding.onCreateView() {
         setUpRecyclerView()
 
         setData()
         observeData()
+
+        binding.textDate.text = LocalDate.now().format(DateTimeFormatter.ofPattern("yyMMdd"))
+        binding.mealCard.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_mealFragment)
+        }
     }
 
     private fun observeData() {

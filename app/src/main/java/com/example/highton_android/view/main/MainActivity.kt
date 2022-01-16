@@ -1,11 +1,10 @@
 package com.example.highton_android.view.main
 
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -30,6 +29,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private fun setUpToolbar() {
         setSupportActionBar(binding.toolbar)
+    }
+
+    fun setMenuVisibility(isVisible: Boolean) {
+        if (isVisible) supportActionBar?.show() else supportActionBar?.hide()
+        binding.mainBottomNav.visibility = if (isVisible) View.VISIBLE else View.GONE
+        binding.fabAdd.visibility = if (isVisible) View.VISIBLE else View.GONE
     }
 
     private fun setUpBottomNavigationView() {
