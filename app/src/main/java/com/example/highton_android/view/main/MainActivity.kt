@@ -1,5 +1,6 @@
 package com.example.highton_android.view.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -13,8 +14,10 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.highton_android.R
 import com.example.highton_android.base.BaseActivity
+import com.example.highton_android.data.TokenDataStore.Companion.DEFAULT_TOKEN
 import com.example.highton_android.databinding.ActivityMainBinding
 import com.example.highton_android.utils.NetworkResult
+import com.example.highton_android.view.auth.AuthActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -34,12 +37,15 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     }
 
     private fun getUser() {
-        if (mainViewModel.token.value == null) {
-            mainViewModel.getToken()
-        }
+        mainViewModel.getToken()
 
-        mainViewModel.token.observe(this) {
-            mainViewModel.getUser()
+        mainViewModel.token.observe(this) { token ->
+            if (token.token == DEFAULT_TOKEN) {
+                startActivity(Intent(this, AuthActivity::class.java))
+                finish()
+            } else {
+                mainViewModel.getUser()
+            }
         }
 
         mainViewModel.user.observe(this) { response ->

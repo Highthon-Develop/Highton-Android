@@ -27,7 +27,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         setData()
         observeData()
 
-        binding.textDate.text = LocalDate.now().format(DateTimeFormatter.ofPattern("yyMMdd"))
+        binding.textDate.text = "211223"
+            //LocalDate.now().format(DateTimeFormatter.ofPattern("yyMMdd"))
         binding.mealCard.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_mealFragment)
         }

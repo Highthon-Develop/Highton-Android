@@ -48,6 +48,7 @@ class LoginFragment : BaseFragment<FragmentAuthLoginBinding>(R.layout.fragment_a
             isSuccess.observe(viewLifecycleOwner) {
                 if (it) {
                     startActivity(Intent(requireContext(), MainActivity::class.java))
+                    activity?.finish()
                 } else {
                     Toast.makeText(requireContext(), "로그인에 실패했습니다.", Toast.LENGTH_SHORT).show()
                 }

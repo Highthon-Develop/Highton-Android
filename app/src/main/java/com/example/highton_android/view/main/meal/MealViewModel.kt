@@ -38,7 +38,8 @@ class MealViewModel @Inject constructor(
         queries["Type"] = "json"
         queries["ATPT_OFCDC_SC_CODE"] = _user.value!!.school.sidoCode
         queries["SD_SCHUL_CODE"] = _user.value!!.school.schoolCode
-        queries["MLSV_YMD"] = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"))
+        queries["MLSV_YMD"] = "20211223"
+            //LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"))
 
         _mealResult.value = try {
             val response = mealRepository.getMeal(queries)
