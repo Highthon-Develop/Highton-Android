@@ -1,8 +1,8 @@
 package com.example.highton_android.view.main.meal
 
 import android.os.Build
-import android.util.Log
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.findNavController
@@ -10,7 +10,7 @@ import com.example.highton_android.R
 import com.example.highton_android.base.BaseFragment
 import com.example.highton_android.databinding.FragmentMealBinding
 import com.example.highton_android.utils.NetworkResult
-import com.example.mealgo.data.meal.model.MealResponse
+import com.example.highton_android.view.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,6 +24,7 @@ class MealFragment : BaseFragment<FragmentMealBinding>(R.layout.fragment_meal) {
         binding.buttonClose.setOnClickListener {
             findNavController().popBackStack()
         }
+
     }
 
     fun observeData() {
@@ -52,5 +53,15 @@ class MealFragment : BaseFragment<FragmentMealBinding>(R.layout.fragment_meal) {
 
     private fun setMealData(data: String) {
         binding.textMeal.text = data
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as MainActivity).setMenuVisibility(false)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        (activity as MainActivity).setMenuVisibility(true)
     }
 }

@@ -36,8 +36,8 @@ class MealViewModel @Inject constructor(
         val queries = HashMap<String, String>()
         queries["KEY"] = "2184fd7c40cc46d19af258829cb14159"
         queries["Type"] = "json"
-        queries["ATPT_OFCDC_SC_CODE"] = _user.value?.school?.sidoCode ?: "F10"
-        queries["SD_SCHUL_CODE"] = _user.value?.school?.schoolCode ?: "7380292"
+        queries["ATPT_OFCDC_SC_CODE"] = _user.value!!.school.sidoCode
+        queries["SD_SCHUL_CODE"] = _user.value!!.school.schoolCode
         queries["MLSV_YMD"] = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"))
 
         _mealResult.value = try {

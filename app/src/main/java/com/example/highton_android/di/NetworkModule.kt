@@ -80,7 +80,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideMealService( @Named("main")retrofit: Retrofit): MealService {
+    fun provideMealService( @Named("school")retrofit: Retrofit): MealService {
         return retrofit.create(MealService::class.java)
     }
 
