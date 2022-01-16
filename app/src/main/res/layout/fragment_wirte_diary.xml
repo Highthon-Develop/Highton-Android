@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="#00FF4A"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:hint="일기 제목을 써주세요"
+            android:layout_marginTop="200dp"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toTopOf="@+id/view" />
+
+        <TextView
+            android:id="@+id/content_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:text="오늘의 일기를 자유롭게 기록해 주세요"
+            app:layout_constraintStart_toStartOf="@+id/editText"
+            app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+        <LinearLayout
+            android:id="@+id/xmlLinear"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_bg_diary_outline"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/view">
+
+            <TextView
+                android:id="@+id/my_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="15dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:text="나만보기"
+                android:textSize="14dp"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/follower_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingStart="15dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="20dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="5dp"
+                android:text="팔로워만 보기"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/every_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingStart="15dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:textColor="@color/white"
+                android:paddingEnd="20dp"
+                android:background="@drawable/item_bg_diary_on"
+                android:paddingRight="15dp"
+                android:paddingBottom="5dp"
+                android:text="전체 공개"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/check_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/xmlLinear" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

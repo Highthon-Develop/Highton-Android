@@ -1,8 +1,7 @@
 package com.example.highton_android.di
 
-import com.example.highton_android.data.service.ApiService
-import com.example.highton_android.data.service.MealService
-import com.example.highton_android.data.service.HomeService
+
+import com.example.highton_android.data.service.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,14 +11,16 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-
-    private const val BASE_URL = "http://ec2-15-165-31-31.ap-northeast-2.compute.amazonaws.com:3000/api/"
+  
+    private const val BASE_URL = "http://ec2-15-165-31-31.ap-northeast-2.compute.amazonaws.com:3000/"
+    private const val SCHOOL_BASE_URL = "https://open.neis.go.kr/"
 
     @Provides
     @Singleton
@@ -40,6 +41,7 @@ object NetworkModule {
 
     }
 
+    @Named("main")
     @Singleton
     @Provides
     fun provideRetrofitInstance(
@@ -56,22 +58,59 @@ object NetworkModule {
             .addConverterFactory(gsonConverterFactory)
             .build()
     }
-
-    @Provides
+    @Named("school")
     @Singleton
-    fun provideApiService(retrofit: Retrofit): ApiService {
-        return retrofit.create(ApiService::class.java)
+    @Provides
+    fun provideSchoolInstance(
+        okHttpClient: OkHttpClient,
+        gsonConverterFactory: GsonConverterFactory
+    ): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(SCHOOL_BASE_URL)
+            .client(okHttpClient)
+            //json 변화기 Factory
+
+            .client(provideHttpClient())
+
+            .addConverterFactory(gsonConverterFactory)
+            .build()
     }
 
+
+
     @Provides
     @Singleton
-    fun provideMealService(retrofit: Retrofit): MealService {
+    fun provideMealService( @Named("main")retrofit: Retrofit): MealService {
         return retrofit.create(MealService::class.java)
     }
 
     @Provides
     @Singleton
-    fun provideHomeService(retrofit: Retrofit): HomeService {
+    fun provideDiaryService( @Named("main")retrofit: Retrofit): DiaryService {
+        return retrofit.create(DiaryService::class.java)
+    }
+    @Provides
+    @Singleton
+    fun provideAuthService( @Named("main")retrofit: Retrofit): AuthService {
+        return retrofit.create(AuthService::class.java)
+    }
+    @Provides
+    @Singleton
+    fun provideSearchSchoolService( @Named("school")retrofit: Retrofit): SearchSchoolService {
+        return retrofit.create(SearchSchoolService::class.java)
+    }
+
+
+    @Provides
+    @Singleton
+    fun provideFeedService( @Named("main")retrofit: Retrofit): FeedService {
+        return retrofit.create(FeedService::class.java)
+    }
+
+
+    @Provides
+    @Singleton
+    fun provideHomeService( @Named("main")retrofit: Retrofit): HomeService {
         return retrofit.create(HomeService::class.java)
     }
 
